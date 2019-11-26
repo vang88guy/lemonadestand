@@ -32,7 +32,14 @@ namespace LemonadeStand_3DayStarter
                 lemons.Add(lemon);
             }
         }
-
+        public void SubtractLemonsFromInventory(int numberOfLemons)
+        {
+            for (int i = 0; i < numberOfLemons; i--)
+            {
+                Lemon lemon = new Lemon();
+                lemons.Add(lemon);
+            }
+        }
         public void AddSugarCubesToInventory(int numberOfSugarCubes)
         {
             for(int i = 0; i < numberOfSugarCubes; i++)
