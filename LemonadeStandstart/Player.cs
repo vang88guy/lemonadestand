@@ -25,5 +25,6 @@ namespace LemonadeStand_3DayStarter
         }
 
         // member methods (CAN DO)
+        //method for player to go to the store
     }
 }

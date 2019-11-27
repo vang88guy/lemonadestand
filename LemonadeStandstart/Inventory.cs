@@ -21,9 +21,14 @@ namespace LemonadeStand_3DayStarter
             sugarCubes = new List<SugarCube>();
             iceCubes = new List<IceCube>();
             cups = new List<Cup>();
+
         }
 
         // member methods (CAN DO)
+        public static void ShowInventory()
+        {
+            Console.WriteLine("Lemons" + Lemon.Count);
+        }
         public void AddLemonsToInventory(int numberOfLemons)
         {
             for(int i = 0; i < numberOfLemons; i++)
