@@ -22,6 +22,15 @@ namespace LemonadeStand_3DayStarter
             Console.ReadLine();
             Console.Clear();
         }
+
+        public static void ShowMoney(double money)
+        {
+
+            Console.WriteLine("Money: " + money);
+            Console.WriteLine();
+            Console.ReadLine(); ;
+        }
+
         public static void ShowInventory(int numberofLemons, int numberofSugarCubes, int numberofIceCubes, int numberofCups)
         {
             Console.WriteLine("Invetory");

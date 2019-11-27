@@ -25,12 +25,11 @@ namespace LemonadeStand_3DayStarter
         public void RunGame() 
         {
             UserInterface.WelcomeToGame();
-            player.inventory.DisplayInventory();
+            player.wallet.DisplayMoney();
             
-            store.SellLemons(player);
-            store.SellSugarCubes(player);
-            store.SellIceCubes(player);
-            store.SellCups(player);
+            player.inventory.DisplayInventory();
+            store.PlayerGoToStore(player);
+            
             Console.Clear();
             player.inventory.DisplayInventory();
 

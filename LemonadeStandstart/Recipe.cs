@@ -26,7 +26,7 @@ namespace LemonadeStand_3DayStarter
         }
 
         //member methods
-        //While loop subtracting each item from the inventory while the simming a day
+        //While loop subtracting each item from the inventory while simming a day
         //method for getting lemons
 
         public void GetLemons(Player player)

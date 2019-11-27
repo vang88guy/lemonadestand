@@ -9,8 +9,8 @@ namespace LemonadeStand_3DayStarter
     class Pitcher
     {
         //member variables
-        int cupsPerPitch;
-        int pitcher = 1;
+        int cupsPerPitch = 1;
+        int pitcher = 16(cupsPerPitch);
 
         public Pitcher()
         {

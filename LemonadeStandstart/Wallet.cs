@@ -23,6 +23,10 @@ namespace LemonadeStand_3DayStarter
             money = 25.00;
         }
 
+        public void DisplayMoney()
+        {
+            UserInterface.ShowMoney(money);
+        }
         public void PayMoneyForItems(double transactionAmount)
         {
             money -= transactionAmount;
