@@ -25,9 +25,9 @@ namespace LemonadeStand_3DayStarter
         }
 
         // member methods (CAN DO)
-        public static void ShowInventory()
+        public void DisplayInventory() 
         {
-            Console.WriteLine("Lemons" + Lemon.Count);
+            UserInterface.ShowInventory(lemons.Count, sugarCubes.Count, iceCubes.Count, cups.Count);
         }
         public void AddLemonsToInventory(int numberOfLemons)
         {

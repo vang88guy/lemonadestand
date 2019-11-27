@@ -22,9 +22,14 @@ namespace LemonadeStand_3DayStarter
             Console.ReadLine();
             Console.Clear();
         }
-        public static void ShowInventory() 
+        public static void ShowInventory(int numberofLemons, int numberofSugarCubes, int numberofIceCubes, int numberofCups)
         {
-            Console.WriteLine("Lemons" + inventory.);
+            Console.WriteLine("Invetory");
+            Console.WriteLine("Lemons: " + numberofLemons +
+                              "\nSugarcubes: " + numberofSugarCubes +
+                              "\nIce Cubes: " + numberofIceCubes +
+                              "\nCups: " + numberofCups);
+            Console.ReadLine(); ;
         }
         public static int GetNumberOfItems(string itemsToGet)
         {
