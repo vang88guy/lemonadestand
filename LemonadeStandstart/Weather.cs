@@ -12,10 +12,10 @@ namespace LemonadeStand_3DayStarter
         public List<string> weatherCondition = new List<string>() { "Sunny", "Cloudy", "Rainy", "Windy"};
         Random random = new Random();
 
-        int temp;
+        int temper;
         public Weather()
         {
-                
+            temper = WeatherTemp();    
         }
 
         //member methods
@@ -25,11 +25,13 @@ namespace LemonadeStand_3DayStarter
             string weatherDay = weatherCondition[weatherindex];
             UserInterface.DisplayWeather(weatherDay);
         }
-        public void WeatherTemp() 
+        public int WeatherTemp() 
         {
             Random random1 = new Random();
             int temp = random1.Next(50, 100);
             UserInterface.DisplayWeatherTemp(temp);
+            
+            return temp;
         }
     }
 }

@@ -11,12 +11,21 @@ namespace LemonadeStand_3DayStarter
     {
         public Weather weather;
         public Customer customer;
+        List<Customer> Customer = new List<Customer>();
         public Day()
         {
             weather = new Weather();
-            customer = new Customer();
+            
         }
 
-
+        public void AddCustomer(int numberOfCustomers, Recipe recipe, Player player) 
+        {
+            for (int i = 0; i < numberOfCustomers; i++)
+            {
+                customer = new Customer(recipe, player);
+                Customer.Add(customer);
+            }
+            
+        }   
     }
 }

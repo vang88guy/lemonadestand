@@ -31,7 +31,10 @@ namespace LemonadeStand_3DayStarter
         {
             money -= transactionAmount;
         }
-
+        public void AddMoney(double transactionAmount)
+        {
+            money += transactionAmount;
+        }
         //need method for adding money back into wallet.
 
     }

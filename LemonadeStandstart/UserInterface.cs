@@ -85,5 +85,29 @@ namespace LemonadeStand_3DayStarter
 
             return quantityOfItem;
         }
+        public static double PriceOfCups(string price)
+        {
+          
+            double quantityOfItem;
+
+            
+            {
+                Console.WriteLine("How much would you like to charge per " + price + "?");
+                Console.WriteLine("Please enter a positive integer (or 0 to cancel):");
+
+                if(! double.TryParse(Console.ReadLine(), out quantityOfItem));
+            }
+
+            return quantityOfItem;
+        }
+
+        public static void DisplayPricePerCup(double money) 
+        {
+            Console.WriteLine("Cups: " + money + " cents each");        
+        }
+        public static void OutOfItems(string item) 
+        {
+            Console.WriteLine("Out of " + item);
+        }
     }
 }

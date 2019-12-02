@@ -14,9 +14,40 @@ namespace LemonadeStand_3DayStarter
 
         public Pitcher()
         {
-                
+
         }
         //member methods
         //method of how many cups are in a a pitcher
+        while (player.inventory.cups.Count >= 1) 
+            {
+                for(cups = 16, cups++) 
+                {
+                    if (player.inventory.lemons.Count >= 0)
+                    {
+                        player.inventory.SubtractLemonsFromInventory(lemonsPerPitcher);
+                    }
+                    else
+                    {
+                        UserInterface.OutOfItems("lemons");
+                    }
+                    if (player.inventory.iceCubes.Count >= 0)
+                    {
+                        player.inventory.SubtractIceCubesFromInventory(icecubesPerPitcher);
+                    }
+                    else
+                    {
+                        UserInterface.OutOfItems("ice cubes");
+                    }
+                    if (player.inventory.sugarCubes.Count >= 0)
+                    {
+                        player.inventory.SubtractSugarCubesFromInventory(sugarcubesPerPitcher);
+                    }
+                    else
+                    {
+                        UserInterface.OutOfItems("sugar");
+                    }
+
+                }
+            }
     }
 }
