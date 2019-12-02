@@ -12,12 +12,13 @@ namespace LemonadeStand_3DayStarter
         int currentDay;
         public Store store;
         public Player player;
+        public Day day;
         
         public Game()
         {
             player = new Player();
             store = new Store();
-            
+            day = new Day();
 
         }
         //member methods
@@ -31,7 +32,13 @@ namespace LemonadeStand_3DayStarter
             store.PlayerGoToStore(player);
             
             Console.Clear();
+            day.weather.WeatherCondition();
+            day.weather.WeatherTemp();
+            player.wallet.DisplayMoney();
             player.inventory.DisplayInventory();
+            
+            
+
 
 
         }

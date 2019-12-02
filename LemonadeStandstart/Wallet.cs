@@ -20,7 +20,7 @@ namespace LemonadeStand_3DayStarter
 
         public Wallet()
         {
-            money = 25.00;
+            money = 50.00;
         }
 
         public void DisplayMoney()

@@ -8,8 +8,7 @@ namespace LemonadeStand_3DayStarter
 {
     static class UserInterface
     {
-        
-
+      
         public static void WelcomeToGame() 
         {
             Console.WriteLine("Welcome to the Lemonade Stand Game");
@@ -54,6 +53,21 @@ namespace LemonadeStand_3DayStarter
             }
 
             return quantityOfItem;
+        }
+        public static void DisplayPrice(double item, string name) 
+        {
+            Console.WriteLine(name + " cost " + item + " cents per unit.");
+            Console.WriteLine();
+        }
+        public static void DisplayWeather(string condition)
+        {
+            Console.WriteLine("It will be " + condition +" today.");
+            Console.WriteLine();
+        }
+        public static void DisplayWeatherTemp(int temp)
+        {
+            Console.WriteLine("It will be " + temp + " degrees today.");
+            Console.WriteLine();
         }
 
         public static int GetRcipeItems(string itemsToGet)
