@@ -9,17 +9,22 @@ namespace LemonadeStand_3DayStarter
     class Game
     {
         //member variables
-        int currentDay;
+        List<Day> day = new List<Day>();
         public Store store;
         public Player player;
-        public Day day;
+        Day days;
+        Recipe recipe = new Recipe();
+        Weather weather = new Weather();
+        int numberOfCustomers;
         
+
+
+
         public Game()
         {
             player = new Player();
             store = new Store();
-            day = new Day();
-
+            
         }
         //member methods
 
@@ -32,8 +37,7 @@ namespace LemonadeStand_3DayStarter
             store.PlayerGoToStore(player);
             
             Console.Clear();
-            day.weather.WeatherCondition();
-            day.weather.WeatherTemp();
+            AddDays();
             player.wallet.DisplayMoney();
             player.inventory.DisplayInventory();
             
@@ -42,7 +46,11 @@ namespace LemonadeStand_3DayStarter
 
 
         }
-
+        public void AddDays() 
+        {
+            days = new Day(numberOfCustomers, recipe, player, weather);
+            day.Add(days);
+        }
 
     }
 }

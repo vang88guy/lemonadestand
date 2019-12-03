@@ -12,8 +12,9 @@ namespace LemonadeStand_3DayStarter
         //member variables
         int lemonsWant;
         int sugarWant;
-        int iceWant;
+        int cups;
         int icecubesWant;
+        Pitcher pitcher;
         //List<string> names;
 
 
@@ -31,10 +32,19 @@ namespace LemonadeStand_3DayStarter
             sugarWant = ran.Next(4, 10);
             icecubesWant = ran.Next(4, 15);
 
-            if(lemonsWant <= recipe.lemonsUseForRecipe  && sugarWant <= recipe.sugarcubesUseForRecipe && icecubesWant <= recipe.icecubeUsesForRecipe) 
+            if(lemonsWant-1 <= recipe.lemonsUseForRecipe  && sugarWant-1 <= recipe.sugarcubesUseForRecipe && icecubesWant-1 <= recipe.icecubeUsesForRecipe) 
             {
-                player.inventory.SubtractCupsFromInventory(1);
-                player.wallet.AddMoney(recipe.pricePerCupForRecipe);
+                if (player.inventory.cups.Count >= 1)
+                {
+                    player.inventory.SubtractCupsFromInventory(1);
+                    player.wallet.AddMoney(recipe.pricePerCupForRecipe);
+                    cups++;
+                    pitcher.cups = cups;
+                }
+                else 
+                {
+                    UserInterface.OutOfItems("cups");
+                }
                 return true;
             }
             else

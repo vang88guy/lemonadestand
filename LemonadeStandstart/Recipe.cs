@@ -17,13 +17,13 @@ namespace LemonadeStand_3DayStarter
         public int cups = 1;
         public double pricePerCupForRecipe = 0;
 
-        public Inventory inventory;
+        
 
         //constructor
 
         public Recipe()
         {
-            inventory = new Inventory();
+            MasterRecipe(); 
             
         }
 
@@ -31,24 +31,24 @@ namespace LemonadeStand_3DayStarter
         //While loop subtracting each item from the inventory while simming a day
         //method for getting lemons
 
-        public int GetLemons(Player player)
+        public int GetLemons()
         {
             int lemonsUse = UserInterface.GetRcipeItems("lemons");
             
-            if (player.inventory.lemons.Count >= 0)
-            {              
-                player.inventory.SubtractLemonsFromInventory(lemonsUse);
-            }
-            else 
-            {
-                UserInterface.OutOfItems("lemons");
-            }
+            //if (player.inventory.lemons.Count >= 0)
+            //{              
+            //    player.inventory.SubtractLemonsFromInventory(lemonsUse);
+            //}
+            //else 
+            //{
+            //    UserInterface.OutOfItems("lemons");
+            //}
             return lemonsUseForRecipe += lemonsUse;
 
         }
 
         //mehtod for getting sugarcubes
-        public int SugarCubes()
+        public int GetSugarCubes()
         {
             int sugarUse = UserInterface.GetRcipeItems("sugar");
 
@@ -63,23 +63,23 @@ namespace LemonadeStand_3DayStarter
             return sugarcubesUseForRecipe += sugarUse;
         }
         //method for getting icecubes                            
-        public int IceCubes(Player player)
+        public int GetIceCubes()
         {
             int iceCubeUse = UserInterface.GetRcipeItems("ice cubes");
 
-            if (player.inventory.iceCubes.Count >= 0)
-            {
-                player.inventory.SubtractIceCubesFromInventory(iceCubeUse);
-            }
-            else
-            {
-                UserInterface.OutOfItems("ice cubes");
-            }
+            //if (player.inventory.iceCubes.Count >= 0)
+            //{
+            //    player.inventory.SubtractIceCubesFromInventory(iceCubeUse);
+            //}
+            //else
+            //{
+            //    UserInterface.OutOfItems("ice cubes");
+            //}
             return icecubeUsesForRecipe += iceCubeUse;
         }
 
         //method for getting cups
-        public double Cups()
+        public double CupsPrice()
         {
             double cupUse = UserInterface.PriceOfCups("cups");
 
@@ -87,14 +87,12 @@ namespace LemonadeStand_3DayStarter
             return pricePerCupForRecipe += cupUse;
         }
 
-        public void ReicpePerPitcher(int lemonsUseForRecipe, int sugarcubesUseForRecipe, int icecubeUsesForRecipe, Player player) 
+        public void MasterRecipe() 
         {
-            int lemonsPerPitcher = lemonsUseForRecipe;
-            int sugarcubesPerPitcher = sugarcubesUseForRecipe;
-            int icecubesPerPitcher = icecubeUsesForRecipe;
-            int cupsPerPitcher;
-
-            
+            GetLemons();
+            GetSugarCubes();
+            GetIceCubes();
+            CupsPrice();
         }
 
     }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
