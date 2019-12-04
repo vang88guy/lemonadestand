@@ -9,29 +9,53 @@ namespace LemonadeStand_3DayStarter
     
     class Day
     {
-        public Weather weather = new Weather();
+        public Weather weather;
         public Customer customer;
-        List<Customer> Customer = new List<Customer>();
-        int numberOfCustomers;
-        public Day(int numberOfCustomers, Recipe recipe, Player player, Weather weather)
+        public List<Customer> CustomerList;
+        
+        public Day(Recipe recipe, Player player)
         {
-            AddCustomer(numberOfCustomers, recipe, player);
-            AddWeather(weather);
-            
+            CustomerList = new List<Customer>();
+            weather = new Weather();
+
+            AddWeather();
+            TempCustomer(recipe, player);
+
         }
-        public void AddWeather(Weather weather) 
+        public void AddWeather() 
         {
             weather.WeatherTemp();
             weather.WeatherCondition();
         }
+        public void TempCustomer(Recipe recipe, Player player)
+        {
+
+            switch (weather.weatherCon)
+            {
+                case "Sunny":
+                    AddCustomer(80, recipe, player);
+                    break;
+                case "Cloudy":
+                    AddCustomer(70, recipe, player);
+                    break;
+                case "Rainy":
+                    AddCustomer(40, recipe, player);
+                    break;
+                case "Windy":
+                    AddCustomer(50, recipe, player);
+                    break;
+            }
+        }
         public void AddCustomer(int numberOfCustomers, Recipe recipe, Player player) 
         {
+            
             for (int i = 0; i < numberOfCustomers; i++)
             {
-                customer = new Customer(recipe, player);
-                Customer.Add(customer);
+                Customer customer = new Customer(recipe, player);
+                CustomerList.Add(customer);
             }
             
-        }   
+        }
+        
     }
 }

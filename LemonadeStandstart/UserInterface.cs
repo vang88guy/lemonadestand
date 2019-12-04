@@ -19,7 +19,7 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine();
             Console.WriteLine("Press enter to contiune ");
             Console.ReadLine();
-            Console.Clear();
+            
         }
 
         public static void ShowMoney(double money)
@@ -109,5 +109,12 @@ namespace LemonadeStand_3DayStarter
         {
             Console.WriteLine("Out of " + item);
         }
+        //public static int CupsUsed(int used)
+        //{
+        //    int usedcups = used;
+        //    usedcups++;
+
+        //}
     }
+
 }

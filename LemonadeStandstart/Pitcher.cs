@@ -9,28 +9,58 @@ namespace LemonadeStand_3DayStarter
     class Pitcher
     {
         //member variables
-        public int cups;
+        //public int cups
+        //{ get; set; }
+        //public List<Cup> cups;
         //int pitcher = 16(cupsPerPitch);
+        Customer customer;
 
-        public Pitcher(Recipe recipe, Player player)
+
+        public Pitcher()
         {
-            ReicpePerPitcher(recipe.lemonsUseForRecipe, recipe.sugarcubesUseForRecipe, recipe.icecubeUsesForRecipe, player);
-
+            
+            //ReicpePerPitcher(recipe.lemonsUseForRecipe, recipe.sugarcubesUseForRecipe, recipe.icecubeUsesForRecipe, player);
+            //cups += customer.newcups;
+            //cups = new List<Cup>();
         }
         //member methods
-        public void ReicpePerPitcher(int lemonsUseForRecipe, int sugarcubesUseForRecipe, int icecubeUsesForRecipe, Player player)
+        //public void AddUsedCups(int numberOfCups)
+        //{
+        //    for (int i = 0; i < numberOfCups; i++)
+        //    {
+        //        Cup cup = new Cup();
+        //        cups.Add(cup);
+        //    }
+        //}
+
+        public void ReicpePerPitcher(Recipe recipe, Player player, Customer customer)
         {
-            int lemonsPerPitcher = lemonsUseForRecipe;
-            int sugarcubesPerPitcher = sugarcubesUseForRecipe;
-            int icecubesPerPitcher = icecubeUsesForRecipe;
-            int cupsPerPitcher;
+            int lemonsPerPitcher = recipe.lemonsUseForRecipe;
+            int sugarcubesPerPitcher = recipe.sugarcubesUseForRecipe;
+            int icecubesPerPitcher = recipe.icecubeUsesForRecipe;
+            int count = customer.cups.Count;
+            int newcount = count / 12;
+            //int cupsPerPitcher;
 
 
+            //if (day.CustomerList[i].pref == true)
+            //{
+            //    //method of how many cups are in a a pitcher
+            //    if (player.inventory.cups.Count >= 1)
+            //    {
+            //        player.inventory.SubtractCupsFromInventory(1);
+            //        player.wallet.AddMoney(recipe.pricePerCupForRecipe);
 
-            //method of how many cups are in a a pitcher
 
-          
-                while(cups == 12 || cups == 24 || cups == 36 || cups == 48 || cups == 60 || cups == 72 || cups == 84 || cups == 96 || cups == 108)
+            //    }
+            //    else
+            //    {
+            //        UserInterface.OutOfItems("cups");
+            //    }
+            //}
+            //while (customer.cups.Count == 12 || customer.cups.Count == 24 || customer.cups.Count == 36 || customer.cups.Count == 48 || customer.cups.Count == 60 || customer.cups.Count == 72 || customer.cups.Count == 84 || customer.cups.Count == 96 || customer.cups.Count == 108)
+            for (int i = 0; i < newcount; i++)
+           
                 {
                     if (player.inventory.lemons.Count >= 2)
                     {
@@ -56,9 +86,9 @@ namespace LemonadeStand_3DayStarter
                     {
                         UserInterface.OutOfItems("sugar");
                     }
-
+                    break;
                 }
-            }
-        
+            
+        }   
     }
 }

@@ -10,12 +10,12 @@ namespace LemonadeStand_3DayStarter
     {
         //member variables
 
-        public int lemonsUseForRecipe = 0;
-        public int sugarcubesUseForRecipe = 0;
-        public int cupsUseForRecipe = 0;
-        public int icecubeUsesForRecipe = 0 ;
+        public int lemonsUseForRecipe;
+        public int sugarcubesUseForRecipe;
+        public int cupsUseForRecipe;
+        public int icecubeUsesForRecipe;
         public int cups = 1;
-        public double pricePerCupForRecipe = 0;
+        public double pricePerCupForRecipe;
 
         
 
@@ -23,7 +23,7 @@ namespace LemonadeStand_3DayStarter
 
         public Recipe()
         {
-            MasterRecipe(); 
+            
             
         }
 
